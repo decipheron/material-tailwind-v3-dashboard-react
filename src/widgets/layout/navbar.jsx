@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import {
-  Navbar as MTNavbar,
   Collapse,
   Typography,
   Button,
@@ -43,7 +42,7 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar className="p-3">
+    <Card className="p-3">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Link to="/">
           <Typography
@@ -78,7 +77,7 @@ export function Navbar({ brandName, routes, action }) {
           })}
         </div>
       </Collapse>
-    </MTNavbar>
+    </Card>
   );
 }
 

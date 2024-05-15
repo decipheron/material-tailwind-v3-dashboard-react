@@ -6,9 +6,6 @@ import {
   CardBody,
   IconButton,
   Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
   Avatar,
   Tooltip,
   Progress,
@@ -86,7 +83,7 @@ export function Home() {
               </Typography>
             </div>
             <Menu placement="left-start">
-              <MenuHandler>
+              <Menu.Trigger>
                 <IconButton size="sm" variant="text" color="blue-gray">
                   <EllipsisVerticalIcon
                     strokeWidth={3}
@@ -94,12 +91,12 @@ export function Home() {
                     className="h-6 w-6"
                   />
                 </IconButton>
-              </MenuHandler>
-              <MenuList>
-                <MenuItem>Action</MenuItem>
-                <MenuItem>Another Action</MenuItem>
-                <MenuItem>Something else here</MenuItem>
-              </MenuList>
+              </Menu.Trigger>
+              <Menu.Content>
+                <Menu.Item>Action</Menu.Item>
+                <Menu.Item>Another Action</Menu.Item>
+                <Menu.Item>Something else here</Menu.Item>
+              </Menu.Content>
             </Menu>
           </CardHeader>
           <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
