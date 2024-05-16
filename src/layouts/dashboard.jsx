@@ -15,7 +15,7 @@ export function Dashboard() {
   const { sidenavType } = controller;
 
   return (
-    <div className="min-h-screen bg-blue-gray-50/50">
+    <div className="min-h-screen bg-surface-light">
       <Sidenav
         routes={routes}
         brandImg={
@@ -23,8 +23,8 @@ export function Dashboard() {
         }
       />
       <div className="p-4 xl:ml-80">
-        <DashboardNavbar />
-        <Configurator />
+        {/* <DashboardNavbar /> */}
+        {/* <Configurator /> */}
         <IconButton
           size="lg"
           color="white"
@@ -44,7 +44,7 @@ export function Dashboard() {
           )}
         </Routes>
         <div className="text-blue-gray-600">
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </div>
