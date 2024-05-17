@@ -13,7 +13,7 @@ export function SignIn() {
       <div className="w-full lg:w-3/5 mt-24">
         <div className="text-center">
           <Typography className="font-semibold leading-[1.3] mb-4 text-4xl">Sign In</Typography>
-          <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Enter your email and password to Sign In.</Typography>
+          <Typography variant="paragraph" color="primary" className="text-lg font-normal">Enter your email and password to Sign In.</Typography>
         </div>
         <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           <div className="mb-1 flex flex-col gap-6">
@@ -52,7 +52,7 @@ export function SignIn() {
       I agree the <a href="#" className="font-medium border-b border-gray-900">Terms and conditions</a>
       </Typography>
     </div>
-          <Button size="md" className="mt-8 uppercase text-xs text-slate-100 font-medium"isFullWidth>
+          <Button size="md" className="mt-8 uppercase text-xs text-slate-100 font-medium select-none font-sans  text-center  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none py-3 px-6 rounded-lg bg-gray-900  shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full "isFullWidth>
             Sign In
           </Button>
 
@@ -70,8 +70,8 @@ export function SignIn() {
         <a href="#">Forgot Password</a>
       </Typography>
      </div>
-          <div className="space-y-4 mt-8">
-            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-4 font-semibold font-sans uppercase border-none" isFullWidth>
+          <div className="space-y-5 mt-8">
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-surface-dark-500/10 hover:shadow-lg hover:shadow-surface-dark-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-4 font-semibold font-sans uppercase border-none" isFullWidth>
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1156_824)">
                   <path d="M16.3442 8.18429C16.3442 7.64047 16.3001 7.09371 16.206 6.55872H8.66016V9.63937H12.9813C12.802 10.6329 12.2258 11.5119 11.3822 12.0704V14.0693H13.9602C15.4741 12.6759 16.3442 10.6182 16.3442 8.18429Z" fill="#4285F4" />
@@ -88,7 +88,7 @@ export function SignIn() {
               <span>Sign in With Google</span>
             </Button>
     
-            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-3 font-semibold font-sans uppercase border-none" isFullWidth>
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-surface-dark-500/10 hover:shadow-lg hover:shadow-surface-dark-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-3 font-semibold font-sans uppercase border-none" isFullWidth>
               <img src="/img/twitter-logo.svg" height={24} width={24} alt="" />
               <span>Sign in With Twitter</span>
             </Button>
