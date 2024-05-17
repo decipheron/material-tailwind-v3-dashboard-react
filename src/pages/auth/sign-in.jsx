@@ -1,5 +1,4 @@
 import {
-  Card,
   Input,
   Checkbox,
   Button,
@@ -72,7 +71,7 @@ export function SignIn() {
       </Typography>
      </div>
           <div className="space-y-4 mt-8">
-            <Button size="md" color="white" className="flex items-center gap-2 justify-center shadow-md font-semibold font-sans uppercase" isFullWidth>
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-4 font-semibold font-sans uppercase border-none" isFullWidth>
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1156_824)">
                   <path d="M16.3442 8.18429C16.3442 7.64047 16.3001 7.09371 16.206 6.55872H8.66016V9.63937H12.9813C12.802 10.6329 12.2258 11.5119 11.3822 12.0704V14.0693H13.9602C15.4741 12.6759 16.3442 10.6182 16.3442 8.18429Z" fill="#4285F4" />
@@ -89,7 +88,7 @@ export function SignIn() {
               <span>Sign in With Google</span>
             </Button>
     
-            <Button size="md" color="white" className="flex items-center gap-2 justify-center shadow-md font-semibold font-sans uppercase" isFullWidth>
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-3 font-semibold font-sans uppercase border-none" isFullWidth>
               <img src="/img/twitter-logo.svg" height={24} width={24} alt="" />
               <span>Sign in With Twitter</span>
             </Button>

@@ -1,5 +1,4 @@
 import {
-  Card,
   Input,
   Checkbox,
   Button,
@@ -11,7 +10,7 @@ import { Link } from "react-router-dom";
 export function SignUp() {
   return (
     <section className="m-8 flex">
-            <div className="w-2/5 h-full hidden lg:block">
+        <div className="w-2/5 h-full hidden lg:block">
         <img
           src="/img/pattern.png"
           className="h-full w-full object-cover rounded-3xl"
@@ -19,47 +18,39 @@ export function SignUp() {
       </div>
       <div className="w-full lg:w-3/5 flex flex-col items-center justify-center">
         <div className="text-center">
-          <Typography variant="h2" className="font-bold mb-4">Join Us Today</Typography>
+          <Typography className="font-bold mb-4 text-4xl">Join Us Today</Typography>
           <Typography variant="paragraph" color="blue-gray" className="text-lg font-normal">Enter your email and password to register.</Typography>
         </div>
         <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
-          <div className="mb-1 flex flex-col gap-6">
-            <Typography variant="small" color="blue-gray" className="-mb-3 font-medium">
-              Your email
-            </Typography>
-            <Input
-              size="lg"
-              placeholder="name@mail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-              labelProps={{
-                className: "before:content-none after:content-none",
-              }}
-            />
+        <div className="mb-1 flex flex-col">
+          <Input className="space-y-2.5 ">
+      <Typography
+        as="label"
+        htmlFor="email"
+        type="small"
+        color="primary"
+        className="font-medium"
+      >
+        Your Email
+      </Typography>
+      <Input.Field id="email" type="email" placeholder="name@gmail.com" className="py-3 placeholder:text-gray-300"  />
+    </Input>
+
           </div>
-          <Checkbox
-            label={
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center justify-start font-medium"
-              >
-                I agree the&nbsp;
-                <a
-                  href="#"
-                  className="font-normal text-black transition-colors hover:text-gray-900 underline"
-                >
-                  Terms and Conditions
-                </a>
-              </Typography>
-            }
-            containerProps={{ className: "-ml-2.5" }}
-          />
-          <Button className="mt-6" fullWidth>
+          <div className="flex items-center gap-2 mt-4 ">
+      <Checkbox id="checkbox" className="cursor-pointer bg-white border border-gray-300 ">
+        <Checkbox.Indicator />
+      </Checkbox>
+      <Typography as="label" htmlFor="checkbox" className="text-foreground cursor-pointer">
+      I agree the <a href="#" className="font-medium border-b border-gray-900">Terms and conditions</a>
+      </Typography>
+    </div>
+          <Button className="mt-8  select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-sm shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" isFullWidth>
             Register Now
           </Button>
 
           <div className="space-y-4 mt-8">
-            <Button size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md" fullWidth>
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/30 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-4 font-semibold uppercase border-none" isFullWidth>
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1156_824)">
                   <path d="M16.3442 8.18429C16.3442 7.64047 16.3001 7.09371 16.206 6.55872H8.66016V9.63937H12.9813C12.802 10.6329 12.2258 11.5119 11.3822 12.0704V14.0693H13.9602C15.4741 12.6759 16.3442 10.6182 16.3442 8.18429Z" fill="#4285F4" />
@@ -75,13 +66,13 @@ export function SignUp() {
               </svg>
               <span>Sign in With Google</span>
             </Button>
-            <Button size="lg" color="white" className="flex items-center gap-2 justify-center shadow-md" fullWidth>
+            <Button size="md" color="white" className="flex items-center gap-2 justify-center transition-all duration-200  shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none w-full py-3 font-semibold uppercase border-none" isFullWidth>
               <img src="/img/twitter-logo.svg" height={24} width={24} alt="" />
               <span>Sign in With Twitter</span>
             </Button>
           </div>
-          <Typography variant="paragraph" className="text-center text-blue-gray-500 font-medium mt-4">
-            Already have an account?
+          <Typography variant="paragraph"  className="font-sans  leading-relaxed text-center text-gray-600 font-medium mt-4">
+            Already have account
             <Link to="/auth/sign-in" className="text-gray-900 ml-1">Sign in</Link>
           </Typography>
         </form>
