@@ -3,10 +3,11 @@ import {
   Typography,
   Alert,
   Card,
-  CardHeader,
-  CardBody,
+  
 } from "@material-tailwind/react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+
+
+import { WarningCircle, Xmark} from "iconoir-react";
 
 export function Notifications() {
   const [showAlerts, setShowAlerts] = React.useState({
@@ -21,65 +22,69 @@ export function Notifications() {
     orange: true,
     red: true,
   });
-  const alerts = ["gray", "green", "orange", "red"];
+  const alerts = ["primary", "success", "warning", "error"];
 
   return (
     <div className="mx-auto my-20 flex max-w-screen-lg flex-col gap-8">
       <Card>
-        <CardHeader
+        <Card.Header
           color="transparent"
-          floated={false}
-          shadow={false}
+          // floated={false}
+          // shadow={false}
           className="m-0 p-4"
         >
-          <Typography variant="h5" color="blue-gray">
+          <Typography  color="primary" className="font-semibold text-xl">
             Alerts
           </Typography>
-        </CardHeader>
-        <CardBody className="flex flex-col gap-4 p-4">
+        </Card.Header>
+        <Card.Body className="flex flex-col gap-4 p-4">
           {alerts.map((color) => (
             <Alert
               key={color}
               open={showAlerts[color]}
               color={color}
-              onClose={() => setShowAlerts((current) => ({ ...current, [color]: false }))}
+              className="p-4 text-white"
+             
             >
+              <Alert.Content >
               A simple {color} alert with an <a href="#">example link</a>. Give
               it a click if you like.
+              </Alert.Content>
+              <Alert.DismissTrigger />
             </Alert>
           ))}
-        </CardBody>
+        </Card.Body>
       </Card>
       <Card>
-        <CardHeader
+        <Card.Header
           color="transparent"
-          floated={false}
-          shadow={false}
+          // floated={false}
+          // shadow={false}
           className="m-0 p-4"
         >
-          <Typography variant="h5" color="blue-gray">
+          <Typography  color="primary" className="font-semibold text-xl">
             Alerts with Icon
           </Typography>
-        </CardHeader>
-        <CardBody className="flex flex-col gap-4 p-4">
+        </Card.Header>
+        <Card.Body className="flex flex-col gap-4 p-4">
           {alerts.map((color) => (
             <Alert
               key={color}
               open={showAlertsWithIcon[color]}
               color={color}
-              icon={
-                <InformationCircleIcon strokeWidth={2} className="h-6 w-6" />
-              }
-              onClose={() => setShowAlertsWithIcon((current) => ({
-                ...current,
-                [color]: false,
-              }))}
+              className="p-4 text-white flex items-center"
             >
+              <Alert.Icon>
+               <WarningCircle />
+              </Alert.Icon>
+              <Alert.Content>
               A simple {color} alert with an <a href="#">example link</a>. Give
               it a click if you like.
+              </Alert.Content>
+              <Alert.DismissTrigger />
             </Alert>
           ))}
-        </CardBody>
+        </Card.Body>
       </Card>
     </div>
   );
