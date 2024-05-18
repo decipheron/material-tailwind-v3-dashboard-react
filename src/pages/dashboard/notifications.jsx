@@ -9,8 +9,8 @@ import {
 } from "@material-tailwind/react";
 
 
-import { WarningCircle} from "iconoir-react";
-import {  Menu, Bell ,Settings  ,ProfileCircle} from "iconoir-react";
+import { Link } from "react-router-dom";
+import {  Menu, Bell ,Settings  ,ProfileCircle ,HeartSolid ,WarningCircle} from "iconoir-react";
 
 const LINKS = [
   {
@@ -34,19 +34,19 @@ const YEAR = new Date().getFullYear();
  
 const FotterLink = [
   {
+    title: "Creative Tim",
+    href: "#",
+  },
+  {
     title: "About Us",
     href: "#",
   },
   {
+    title: "Blog",
+    href: "#",
+  },
+  {
     title: "License",
-    href: "#",
-  },
-  {
-    title: "Contribute",
-    href: "#",
-  },
-  {
-    title: "Contact Us",
     href: "#",
   },
 ];
@@ -100,14 +100,8 @@ export function Notifications() {
       <Card as="nav" className="mx-auto w-full max-w-screen-xl p-2 bg-transparent border-none shadow-none">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-        <Typography
-          as="a"
-          href="#"
-          type="small"
-          className="ml-2 mr-2 block py-1 font-semibold"
-          >
-          Material Tailwind
-        </Typography>
+        <Link to="/home" className="text-slate-400 hover:text-info">Dashboard </Link>
+        <Typography> / Notifications</Typography>
         <hr className="ml-1 mr-1.5 hidden h-5 w-px border-l border-t-0 border-secondary-dark lg:block" />
         </div>
         <div className="flex items-center gap-2 ">
@@ -198,14 +192,14 @@ export function Notifications() {
     </div>
 
     <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-x-12 gap-y-3 text-slate-500 text-sm py-4 text-center md:justify-between">
-      <Typography>&copy; {YEAR}, made with  by Creative Tim for a better web.</Typography>
-      <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+      <Typography className="flex items-center gap-2 text-sm" >&copy; {YEAR}, made with <HeartSolid className="w-3 h-3 text-red-600" />by <strong>Creative Tim</strong> for a better web.</Typography>
+      <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 ">
         {FotterLink.map(({ title, href }) => (
           <li>
             <Typography
               as="a"
-              href={href}
-              className="hover:text-info"
+               href={href}
+              className="hover:text-info text-sm"
             >
               {title}
             </Typography>
