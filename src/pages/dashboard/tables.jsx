@@ -14,8 +14,8 @@ export function Tables() {
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <Card>
-      <Card variant="gradient" color="primary" className="px-3 py-5 text-white shadow-none mb-3">
-      <Typography>Authors Table</Typography>
+      <Card color="primary" className="py-4 px-5 text-white shadow-none mx-3 mt-3 mb-1 w-[calc(100%-24px)] rounded-md">
+      <Typography type="h6">Authors Table</Typography>
        </Card>
         <Card.Body className="overflow-x-scroll px-0 pt-0 pb-2">
           <table className="w-full min-w-[640px] table-auto">
