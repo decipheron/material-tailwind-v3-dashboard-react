@@ -1,12 +1,11 @@
 import {
   Card,
-  CardHeader,
-  CardBody,
   Typography,
   Avatar,
   Chip,
   Tooltip,
   Progress,
+  Button,
 } from "@material-tailwind/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { authorsTableData, projectsTableData } from "@/data";
@@ -14,13 +13,11 @@ import { authorsTableData, projectsTableData } from "@/data";
 export function Tables() {
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
-      {/* <Card>
-        <CardHeader variant="gradient" color="gray" className="mb-8 p-6">
-          <Typography variant="h6" color="white">
-            Authors Table
-          </Typography>
-        </CardHeader>
-        <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+      <Card>
+      <Card variant="gradient" color="primary" className="px-3 py-5 text-white shadow-none mb-3">
+      <Typography>Authors Table</Typography>
+       </Card>
+        <Card.Body className="overflow-x-scroll px-0 pt-0 pb-2">
           <table className="w-full min-w-[640px] table-auto">
             <thead>
               <tr>
@@ -103,15 +100,15 @@ export function Tables() {
               )}
             </tbody>
           </table>
-        </CardBody>
-      </Card> */}
-      {/* <Card>
-        <CardHeader variant="gradient" color="gray" className="mb-8 p-6">
+        </Card.Body>
+      </Card>
+      <Card>
+        <Card.Header variant="gradient" color="gray" className="mb-8 p-6">
           <Typography variant="h6" color="white">
             Projects Table
           </Typography>
-        </CardHeader>
-        <CardBody className="overflow-x-scroll px-0 pt-0 pb-2">
+        </Card.Header>
+        <Card.Body className="overflow-x-scroll px-0 pt-0 pb-2">
           <table className="w-full min-w-[640px] table-auto">
             <thead>
               <tr>
@@ -212,8 +209,8 @@ export function Tables() {
               )}
             </tbody>
           </table>
-        </CardBody>
-      </Card> */}
+        </Card.Body>
+      </Card>
     </div>
   );
 }

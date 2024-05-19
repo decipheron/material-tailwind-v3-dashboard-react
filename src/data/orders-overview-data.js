@@ -1,40 +1,37 @@
-import {
-  BellIcon,
-  PlusCircleIcon,
-  ShoppingCartIcon,
-  CreditCardIcon,
-  LockOpenIcon,
-  BanknotesIcon,
-} from "@heroicons/react/24/solid";
+
+import { Bell ,PlusCircleSolid ,Cart  , CreditCardSolid , Lock , Notes} from "iconoir-react";
+
+
+// change these icons to solid version
 
 export const ordersOverviewData = [
   {
-    icon: BellIcon,
+    icon: Bell,
     title: "$2400, Design changes",
     description: "22 DEC 7:20 PM",
   },
   {
-    icon: PlusCircleIcon,
+    icon: PlusCircleSolid,
     title: "New order #1832412",
     description: "21 DEC 11 PM",
   },
   {
-    icon: ShoppingCartIcon,
+    icon: Cart,
     title: "Server payments for April",
     description: "21 DEC 9:34 PM",
   },
   {
-    icon: CreditCardIcon,
+    icon: CreditCardSolid,
     title: "New card added for order #4395133",
     description: "20 DEC 2:20 AM",
   },
   {
-    icon: LockOpenIcon,
+    icon: Lock,
     title: "Unlock packages for development",
     description: "18 DEC 4:54 AM",
   },
   {
-    icon: BanknotesIcon,
+    icon: Notes,
     title: "New order #9583120",
     description: "17 DEC",
   },
