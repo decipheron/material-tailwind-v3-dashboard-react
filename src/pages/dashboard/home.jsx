@@ -200,7 +200,7 @@ export function Home() {
                     <Timeline.Header>
                       {key !== ordersOverviewData.length - 1 && <Timeline.Separator />}
                       <Timeline.Icon className="w-8 h-8">
-                        <Icon className="w-4 h-4" />
+                        <Icon className="w-4 h-4"/>
                       </Timeline.Icon>
                     </Timeline.Header>
                     <Timeline.Body className="-translate-y-1.5 !pb-4">

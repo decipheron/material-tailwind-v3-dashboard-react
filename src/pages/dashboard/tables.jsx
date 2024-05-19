@@ -5,10 +5,10 @@ import {
   Chip,
   Tooltip,
   Progress,
-  Button,
+  
 } from "@material-tailwind/react";
-import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { authorsTableData, projectsTableData } from "@/data";
+import { MoreVertCircle } from "iconoir-react";
 
 export function Tables() {
   return (
@@ -75,14 +75,15 @@ export function Tables() {
                       <td className={className}>
                         <Chip
                           variant="gradient"
-                          color={online ? "green" : "blue-gray"}
-                          value={online ? "online" : "offline"}
-                          className="py-0.5 px-2 text-[11px] font-medium w-fit"
-                        />
+                          color={online ? "success" : "secondary"}
+                          className="py-0.5 px-2 text-[11px] font-semibold w-fit uppercase "
+                         >
+                          {online ? "online" : "offline"}
+                      </Chip>
                       </td>
                       <td className={className}>
                         <Typography className="text-xs font-semibold text-blue-gray-600">
-                          {date}
+                          {date} 
                         </Typography>
                       </td>
                       <td className={className}>
@@ -103,11 +104,9 @@ export function Tables() {
         </Card.Body>
       </Card>
       <Card>
-        <Card.Header variant="gradient" color="gray" className="mb-8 p-6">
-          <Typography variant="h6" color="white">
-            Projects Table
-          </Typography>
-        </Card.Header>
+      <Card color="primary" className="py-4 px-5 text-white shadow-none mx-3 mt-3 mb-1 w-[calc(100%-24px)] rounded-md">
+      <Typography type="h6">Projects Tabel</Typography>
+       </Card>
         <Card.Body className="overflow-x-scroll px-0 pt-0 pb-2">
           <table className="w-full min-w-[640px] table-auto">
             <thead>
@@ -116,7 +115,7 @@ export function Tables() {
                   (el) => (
                     <th
                       key={el}
-                      className="border-b border-blue-gray-50 py-3 px-5 text-left"
+                      className="border-b  py-3 px-5 text-left"
                     >
                       <Typography
                         variant="small"
@@ -135,7 +134,7 @@ export function Tables() {
                   const className = `py-3 px-5 ${
                     key === projectsTableData.length - 1
                       ? ""
-                      : "border-b border-blue-gray-50"
+                      : "border-b border-secondary"
                   }`;
 
                   return (
@@ -144,9 +143,8 @@ export function Tables() {
                         <div className="flex items-center gap-4">
                           <Avatar src={img} alt={name} size="sm" />
                           <Typography
-                            variant="small"
-                            color="blue-gray"
-                            className="font-bold"
+                
+                            className="font-bold text-sm"
                           >
                             {name}
                           </Typography>
@@ -183,12 +181,9 @@ export function Tables() {
                           >
                             {completion}%
                           </Typography>
-                          <Progress
-                            value={completion}
-                            variant="gradient"
-                            color={completion === 100 ? "green" : "gray"}
-                            className="h-1"
-                          />
+                         <Progress size="sm" value={completion}  color={completion === 100 ? "success" : "primary"}>
+                              <Progress.Bar />
+                            </Progress>
                         </div>
                       </td>
                       <td className={className}>
@@ -197,9 +192,8 @@ export function Tables() {
                           href="#"
                           className="text-xs font-semibold text-blue-gray-600"
                         >
-                          <EllipsisVerticalIcon
-                            strokeWidth={2}
-                            className="h-5 w-5 text-inherit"
+                          <MoreVertCircle
+                                className="h-5 w-5 text-inherit"
                           />
                         </Typography>
                       </td>

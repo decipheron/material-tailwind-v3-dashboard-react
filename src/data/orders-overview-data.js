@@ -1,5 +1,5 @@
 
-import { Bell ,PlusCircleSolid ,Cart  , CreditCardSolid , Lock , Notes} from "iconoir-react";
+import { Bell ,PlusCircle ,Cart  , CreditCard , Lock , Notes} from "iconoir-react";
 
 
 // change these icons to solid version
@@ -11,7 +11,7 @@ export const ordersOverviewData = [
     description: "22 DEC 7:20 PM",
   },
   {
-    icon: PlusCircleSolid,
+    icon: PlusCircle,
     title: "New order #1832412",
     description: "21 DEC 11 PM",
   },
@@ -21,7 +21,7 @@ export const ordersOverviewData = [
     description: "21 DEC 9:34 PM",
   },
   {
-    icon: CreditCardSolid,
+    icon: CreditCard,
     title: "New card added for order #4395133",
     description: "20 DEC 2:20 AM",
   },
