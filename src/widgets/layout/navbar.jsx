@@ -26,7 +26,7 @@ export function Navbar({ brandName, routes, action }) {
           key={name}
           as="li"
           variant="small"
-          color="blue-gray"
+          
           className="capitalize"
         >
           <Link to={path} className="flex items-center gap-1 p-1 font-normal">
