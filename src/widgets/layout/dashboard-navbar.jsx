@@ -9,19 +9,13 @@ import {
   Avatar,
   Card
 } from "@material-tailwind/react";
-import {
-  UserCircleIcon,
-  Cog6ToothIcon,
-  BellIcon,
-  ClockIcon,
-  CreditCardIcon,
-  Bars3Icon,
-} from "@heroicons/react/24/solid";
+
 import {
   useMaterialTailwindController,
   setOpenConfigurator,
   setOpenSidenav,
 } from "@/context";
+import { Bell, ProfileCircle, Settings , Clock, CreditCard, Barcode } from "iconoir-react";
 
 export function DashboardNavbar() {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -31,13 +25,13 @@ export function DashboardNavbar() {
 
   return (
     <Card
-      color={fixedNavbar ? "white" : "transparent"}
-      className={`rounded-xl transition-all ${
+      
+      className={`rounded-xl transition-all bg-transparent border-none shadow-none ${
         fixedNavbar
           ? "sticky top-4 z-40 py-3 shadow-md shadow-blue-gray-500/5"
           : "px-0 py-1"
       }`}
-      fullWidth
+      isFullWidth
       blurred={fixedNavbar}
     >
       <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
@@ -49,60 +43,51 @@ export function DashboardNavbar() {
           >
             <Link to={`/${layout}`}>
               <Typography
-                variant="small"
-                // color="blue-gray"
-                className="font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100"
+                className="opacity-50 transition-all hover:text-info hover:opacity-100 text-sm text-slate-500"
               >
                 {layout}
               </Typography>
             </Link>
+            <span>/</span>
             <Typography
-              variant="small"
-              // color="blue-gray"
-              className="font-normal"
+              className="text-sm "
             >
               {page}
             </Typography>
           </Breadcrumb>
-          <Typography variant="h6"
-          //  color="blue-gray"
+          <Typography className="text-md font-semibold text-primary "         
            >
             {page}
           </Typography>
         </div>
-        <div className="flex items-center">
-          <div className="mr-auto md:mr-4 md:w-56">
-            <Input label="Search" />
-          </div>
+         <div className="flex items-center">
+          <Input className="mr-auto md:mr-4 md:w-56 ">
+            <Input.Field label="Search" placeholder="Search" className="py-2.5 border-slate-500 "  />
+          </Input>
           <IconButton
-            variant="text"
-            // color="blue-gray"
             className="grid xl:hidden"
             onClick={() => setOpenSidenav(dispatch, !openSidenav)}
           >
-            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
+            <Barcode  className="h-6 w-6 text-blue-gray-500" />
           </IconButton>
           <Link to="/auth/sign-in">
             <Button
-              variant="text"
-              // color="blue-gray"
-              className="hidden items-center gap-1 px-4 xl:flex normal-case"
+              className="hidden items-center gap-1 px-4 xl:flex  bg-transparent text-slate-500 border-none hover:bg-slate-200/80 text-xs font-semibold"
             >
-              <UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
+              <ProfileCircle className="h-5 w-5 " />
               Sign In
             </Button>
             <IconButton
-              variant="text"
-              // color="blue-gray"
+              
               className="grid xl:hidden"
             >
-              <UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
+              <ProfileCircle className="h-5 w-5 text-blue-gray-500" />
             </IconButton>
           </Link>
           <Menu>
             <Menu.Trigger>
-              <IconButton variant="text" color="blue-gray">
-                <BellIcon className="h-5 w-5 text-blue-gray-500" />
+              <IconButton className="bg-transparent text-slate-500 border-none hover:bg-slate-200/80" >
+                <Bell className="h-5 w-5 " />
               </IconButton>
             </Menu.Trigger>
             <Menu.Content className="w-max border-0">
@@ -111,22 +96,20 @@ export function DashboardNavbar() {
                   src="https://demos.creative-tim.com/material-dashboard/assets/img/team-2.jpg"
                   alt="item-1"
                   size="sm"
-                  variant="circular"
+                  
                 />
                 <div>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="mb-1 font-normal"
+                  
+                    className="mb-1 text-sm"
                   >
                     <strong>New message</strong> from Laur
                   </Typography>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="flex items-center gap-1 text-xs font-normal opacity-60"
+                   
+                    className="flex items-center gap-1 text-xs  opacity-60"
                   >
-                    <ClockIcon className="h-3.5 w-3.5" /> 13 minutes ago
+                    <Clock className="h-3.5 w-3.5" /> 13 minutes ago
                   </Typography>
                 </div>
               </Menu.Item>
@@ -135,56 +118,51 @@ export function DashboardNavbar() {
                   src="https://demos.creative-tim.com/material-dashboard/assets/img/small-logos/logo-spotify.svg"
                   alt="item-1"
                   size="sm"
-                  variant="circular"
+                 
                 />
                 <div>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="mb-1 font-normal"
+                   
+                    className="mb-1 text-sm"
                   >
                     <strong>New album</strong> by Travis Scott
                   </Typography>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="flex items-center gap-1 text-xs font-normal opacity-60"
+                   
+                    className="flex items-center gap-1 text-xs  opacity-60"
                   >
-                    <ClockIcon className="h-3.5 w-3.5" /> 1 day ago
+                    <Clock className="h-3.5 w-3.5" /> 1 day ago
                   </Typography>
                 </div>
               </Menu.Item>
               <Menu.Item className="flex items-center gap-4">
-                <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-tr from-blue-gray-800 to-blue-gray-900">
-                  <CreditCardIcon className="h-4 w-4 text-white" />
+                <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-tr from-slate-800 to-slate-900">
+                  <CreditCard className="h-4 w-4 text-white" />
                 </div>
                 <div>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="mb-1 font-normal"
+                    
+                    className="mb-1 text-sm"
                   >
                     Payment successfully completed
                   </Typography>
                   <Typography
-                    variant="small"
-                    // color="blue-gray"
-                    className="flex items-center gap-1 text-xs font-normal opacity-60"
+                   
+                    className="flex items-center gap-1 text-xs opacity-60"
                   >
-                    <ClockIcon className="h-3.5 w-3.5" /> 2 days ago
+                    <Clock className="h-3.5 w-3.5" /> 2 days ago
                   </Typography>
                 </div>
               </Menu.Item>
             </Menu.Content>
           </Menu>
           <IconButton
-            variant="text"
-            // color="blue-gray"
+           className="bg-transparent text-slate-500 border-none hover:bg-slate-200/80"
             onClick={() => setOpenConfigurator(dispatch, true)}
           >
-            <Cog6ToothIcon className="h-5 w-5 text-blue-gray-500" />
+            <Settings className="h-5 w-5 " />
           </IconButton>
-        </div>
+        </div> 
       </div>
     </Card>
   );
