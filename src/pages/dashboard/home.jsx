@@ -197,9 +197,9 @@ export function Home() {
               {ordersOverviewData.map(
                 ({ icon: Icon, title, description }, key) => (
                   <Timeline.Item key={key} className="!gap-x-4">
-                    <Timeline.Header>
+                    <Timeline.Header className="">
                       {key !== ordersOverviewData.length - 1 && <Timeline.Separator />}
-                      <Timeline.Icon className="w-8 h-8">
+                      <Timeline.Icon className="w-8 h-8 ">
                         <Icon className="w-4 h-4"/>
                       </Timeline.Icon>
                     </Timeline.Header>
