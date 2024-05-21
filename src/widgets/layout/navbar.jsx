@@ -43,7 +43,7 @@ export function Navbar({ brandName, routes, action }) {
 
   return (
     <Card className="p-3">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+      <div className="container mx-auto flex items-center justify-between">
         <Link to="/">
           <Typography
             variant="small"

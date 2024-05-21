@@ -1,5 +1,5 @@
 import React from "react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Xmark } from "iconoir-react";
 import {
   Button,
   IconButton,
@@ -72,24 +72,24 @@ export function Configurator() {
     >
       <div className="flex items-start justify-between px-6 pt-8 pb-6">
         <div>
-          <Typography variant="h5" color="blue-gray">
+          <Typography className="font-semibold text-lg">
             Dashboard Configurator
           </Typography>
-          <Typography className="font-normal text-blue-gray-600">
+          <Typography className="text-slate-500">
             See our dashboard options.
           </Typography>
         </div>
         <IconButton
-          variant="text"
-          color="blue-gray"
+          className="bg-tranparent text-slate-500 border-none hover:bg-slate-200"
+          
           onClick={() => setOpenConfigurator(dispatch, false)}
         >
-          <XMarkIcon strokeWidth={2.5} className="h-5 w-5" />
+          <Xmark  className="h-6 w-6" />
         </IconButton>
       </div>
       <div className="py-4 px-6">
         <div className="mb-12">
-          <Typography variant="h6" color="blue-gray">
+          <Typography >
             Sidenav Colors
           </Typography>
           <div className="mt-3 flex items-center gap-2">
@@ -107,41 +107,42 @@ export function Configurator() {
           </div>
         </div>
         <div className="mb-12">
-          <Typography variant="h6" color="blue-gray">
+          <Typography className="font-semibold">
             Sidenav Types
           </Typography>
-          <Typography variant="small" color="gray">
+          <Typography className="text-slate-500 text-sm tracking-[0.5px]">
             Choose between 3 different sidenav types.
           </Typography>
-          <div className="mt-3 flex items-center gap-2">
+           <div className="mt-3 flex items-center gap-2">
             <Button
-              variant={sidenavType === "dark" ? "gradient" : "outlined"}
+              // variant={sidenavType === "dark" ? "gradient" : "outlined"}
               onClick={() => setSidenavType(dispatch, "dark")}
             >
               Dark
             </Button>
             <Button
-              variant={sidenavType === "transparent" ? "gradient" : "outlined"}
+              // variant={sidenavType === "transparent" ? "gradient" : "outlined"}
               onClick={() => setSidenavType(dispatch, "transparent")}
             >
               Transparent
             </Button>
             <Button
-              variant={sidenavType === "white" ? "gradient" : "outlined"}
+              // variant={sidenavType === "white" ? "gradient" : "outlined"}
               onClick={() => setSidenavType(dispatch, "white")}
             >
               White
             </Button>
-          </div>
+          </div> 
         </div>
         <div className="mb-12">
           <hr />
           <div className="flex items-center justify-between py-5">
-            <Typography variant="h6" color="blue-gray">
+            <Typography className="font-semibold">
               Navbar Fixed
             </Typography>
             <Switch
               id="navbar-fixed"
+              className="cursor-pointer after:shadow-md after:w-5 after:-translate-y-[14px] after:-translate-x-[3px] after:h-5 before:h-4 before:w-9"
               value={fixedNavbar}
               onChange={() => setFixedNavbar(dispatch, !fixedNavbar)}
             />
@@ -152,7 +153,7 @@ export function Configurator() {
               href="https://www.creative-tim.com/product/material-tailwind-dashboard-react?rel=mtdr"
               target="_black"
             >
-              <Button variant="gradient" fullWidth>
+              <Button variant="gradient" isFullWidth className="py-3.5">
                 Free Download
               </Button>
             </a>
@@ -160,7 +161,7 @@ export function Configurator() {
               href="https://www.material-tailwind.com/docs/react/installation?rel=mtdr"
               target="_black"
             >
-              <Button variant="outlined" color="blue-gray" fullWidth>
+              <Button variant="outline"  isFullWidth className="py-3.5">
                 View Documentation
               </Button>
             </a>
@@ -168,7 +169,7 @@ export function Configurator() {
               href="https://www.material-tailwind.com/blocks/react?rel=mtdr"
               target="_black"
             >
-              <Button variant="outlined" color="blue-gray" fullWidth>
+              <Button variant="outline"  isFullWidth className="py-3.5">
                 Material Tailwind PRO
               </Button>
             </a>
@@ -179,6 +180,7 @@ export function Configurator() {
             target="_blank"
             rel="noreferrer"
           >
+            
             <Chip
               value={`${stars} - Stars`}
               icon={
@@ -195,7 +197,7 @@ export function Configurator() {
                   />
                 </svg>
               }
-              className="bg-blue-gray-900 px-4"
+              className="bg-slate-500 px-4"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -207,27 +209,7 @@ export function Configurator() {
             </svg>
           </a>
         </div>
-        <div className="text-center">
-          <Typography variant="h6" color="blue-gray">
-            Thank you for sharing ❤️
-          </Typography>
-          <div className="mt-4 flex justify-center gap-2">
-            <Button
-              variant="gradient"
-              className="flex items-center gap-2"
-            >
-              <i className="fa-brands fa-twitter text-white" />
-              Tweet
-            </Button>
-            <Button
-              variant="gradient"
-              className="flex items-center gap-2"
-            >
-              <i className="fa-brands fa-facebook text-white" />
-              Share
-            </Button>
-          </div>
-        </div>
+        
       </div>
     </aside>
   );
